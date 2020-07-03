@@ -1,0 +1,77 @@
+﻿@page "/"
+@using System.Net.Http
+@using WebImageExtractor.Blazor.Models
+@inject HttpClient Http
+
+<div class="colflex grow" style="min-height: 300px; max-height: 300px">
+    <div class="rowflex">
+        <div class="grow"></div>
+        <div class="search rowflex">
+            <input type="text" class="searchTerm shadow" @bind="EnteredUri" placeholder="google.com">
+            <button type="submit" class="searchButton shadow" @onclick=SearchPressed>
+                <div class="colflex">
+                    <img class="icon" src="img/search.svg" />
+                </div>
+            </button>
+        </div>
+        <div class="grow"></div>
+    </div>
+    <div style="height: 40px; margin-top: 50px">
+        <div class="rowflex">
+            <div class="grow"></div>
+            <div>
+                <ul class="faux-select @modeDropdownClass" data-selected-value="ted" @onclick=DropDownToggle>
+                    <li class="selected-option">
+                        <span id="selOpt1Span">@selectedExtractMode</span>
+                        <ul id="selOpt1" class="options @modeDropdownClass">
+                            <li @onclick="() => ModeItemClick(0)">Extract All Images</li>
+                            <li @onclick="() => ModeItemClick(1)">Favicons Only</li>
+                            <li @onclick="() => ModeItemClick(2)">Apple Touch Icons Only</li>
+                        </ul>
+                    </li>
+                </ul>
+
+                <div style="margin: 10px; display: inline-block;">
+                    <input class="styled-checkbox" @bind="RecurseUri" id="styled-checkbox-1" type="checkbox" value="value2">
+                    <label for="styled-checkbox-1">Recurse URL Segments</label>
+                </div>
+                <div style="margin: 10px; display: inline-block;">
+                    <input class="styled-checkbox" @bind="RecurseHyperlinks" id="styled-checkbox-2" type="checkbox" value="value2">
+                    <label for="styled-checkbox-2">Explore Hyperlinks (1 Level)</label>
+                </div>
+                <div style="margin: 10px; display: inline-block;">
+                    <input class="styled-checkbox" @bind="SvgOnly" id="styled-checkbox-3" type="checkbox" value="value2">
+                    <label for="styled-checkbox-3">SVGs Only</label>
+                </div>
+            </div>
+            <div class="grow"></div>
+        </div>
+    </div>
+</div>
+<div class="grow"></div>
+<div>
+    @if (showImages)
+    {
+        @foreach (DisplayImage image in displayImages)
+        {
+            if (image.IsSvg)
+            {
+                <a href="@image.Link" target="_blank">
+                    @((MarkupString)image.SvgContent)
+                </a>
+            }
+            else
+            {
+                <a href="@image.Link" target="_blank">
+                    <img alt="" src="data:image/png;base64, @image.EncodedPixelData" style="min-width:100px; min-height:100px; max-width: 400px; max-height: 400px;" />
+                </a>
+            }
+        }
+    }
+</div>
+<div style="text-align: center; font-size: 16px; display: @spinnerDisplay">
+    <svg style="margin-bottom: 20px" class="spinner" width="65px" height="65px" viewBox="0 0 66 66" xmlns="http://www.w3.org/2000/svg">
+        <circle class="path" fill="none" stroke-width="6" stroke-linecap="round" cx="33" cy="33" r="30"></circle>
+    </svg><br>
+    Fetching Images ...
+</div>

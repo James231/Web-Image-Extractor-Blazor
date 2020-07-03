@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.30114.105
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WebImageExtractor", "WebImageExtractor\WebImageExtractor.csproj", "{9C19813B-EB40-465E-B5E3-3C5B0E890B6E}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WebImageExtractor.Blazor", "WebImageExtractor.Blazor\WebImageExtractor.Blazor.csproj", "{8D75ED2D-F8C3-4FA1-AA5E-01E4B7E1FED2}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{9C19813B-EB40-465E-B5E3-3C5B0E890B6E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9C19813B-EB40-465E-B5E3-3C5B0E890B6E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9C19813B-EB40-465E-B5E3-3C5B0E890B6E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9C19813B-EB40-465E-B5E3-3C5B0E890B6E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8D75ED2D-F8C3-4FA1-AA5E-01E4B7E1FED2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8D75ED2D-F8C3-4FA1-AA5E-01E4B7E1FED2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8D75ED2D-F8C3-4FA1-AA5E-01E4B7E1FED2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8D75ED2D-F8C3-4FA1-AA5E-01E4B7E1FED2}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {2FC52DE7-EA44-4ED7-A35D-C3DE50E2877B}
+	EndGlobalSection
+EndGlobal

@@ -1,0 +1,276 @@
+@import url(https://fonts.googleapis.com/css?family=Open+Sans);
+
+body{
+	background: #f2f2f2;
+	font-family: 'Open Sans', sans-serif;
+	min-height: 100vh;
+	margin: 0;
+}
+
+.search {
+	position: relative;
+	display: flex;
+	width: 90%;
+	max-width: 700px;
+}
+
+.searchTerm {
+	flex-grow: 1;
+	border: 3px solid #00B4CC;
+	border-right: none;
+	padding: 15px;
+	border-radius: 50px 0 0 50px;
+	outline: none;
+	color: #9DBFAF;
+	font-size: 28px;
+}
+
+.searchTerm:focus{
+	color: #00B4CC;
+}
+
+.searchButton {
+	width: 100px;
+	border: 1px solid #00B4CC;
+	background: #00B4CC;
+	color: #fff;
+	border-radius: 0 50px 50px 0;
+	cursor: pointer;
+	font-size: 28px;
+	padding: 8px;
+}
+
+.icon {
+	color: #fff;
+	width: 40px;
+	height: 40px;
+	display: inline-block;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+.shadow {
+	box-shadow: 0 10px 16px 0 rgba(0,0,0,0.2),0 6px 20px 0 rgba(0,0,0,0.19) !important;
+}
+
+.grow {
+	flex-grow: 1;
+}
+
+.grow-2 {
+	flex-grow: 2;
+}
+
+.colflex, .rowflex {
+	display: flex;
+	justify-content: center;
+}
+
+.colflex {
+	flex-direction: column;
+}
+
+.rowflex {
+	flex-direction: row;
+}
+
+.container {
+	width: 80%;
+	margin-left: auto;
+	margin-right: auto;
+	display: block;
+}
+
+.styled-checkbox {
+  position: absolute;
+  opacity: 0;
+}
+
+.styled-checkbox + label {
+  position: relative;
+  cursor: pointer;
+  padding: 0;
+}
+
+.styled-checkbox + label:before {
+  content: "";
+  margin-right: 10px;
+  display: inline-block;
+  vertical-align: text-top;
+  width: 20px;
+  height: 20px;
+  background: white;
+}
+
+.styled-checkbox:hover + label:before {
+  background: #00B4CC;
+}
+
+.styled-checkbox:focus + label:before {
+  box-shadow: 0 0 0 3px rgba(0, 0, 0, 0.12);
+}
+
+.styled-checkbox:checked + label:before {
+  background: #00B4CC;
+}
+
+.styled-checkbox:disabled + label {
+  color: #b8b8b8;
+  cursor: auto;
+}
+
+.styled-checkbox:disabled + label:before {
+  box-shadow: none;
+  background: #ddd;
+}
+
+.styled-checkbox:checked + label:after {
+  content: "";
+  position: absolute;
+  left: 5px;
+  top: 9px;
+  background: white;
+  width: 2px;
+  height: 2px;
+  box-shadow: 2px 0 0 white, 4px 0 0 white, 4px -2px 0 white, 4px -4px 0 white, 4px -6px 0 white, 4px -8px 0 white;
+  transform: rotate(45deg);
+}
+
+#select-box {
+  min-width: 320px;
+  max-width: 30%;
+  width: 100%;
+  margin: 0 auto;
+  padding: 2em;
+  text-align: center;
+  background: #fff;
+}
+
+.faux-select {
+  list-style-type: none;
+  padding: 0.4em 0;
+  background: #00B4CC;
+  color: #fff;
+  text-align: left;
+  border: 3px solid #C6C6C6;
+  cursor: pointer;
+  width: 230px;
+  display: inline-block;
+  position: relative;
+}
+
+.faux-select li {
+  padding: 0;
+  text-indent: 1em;
+  position: relative;
+}
+
+.faux-select li .options {
+  display: block;
+  list-style-type: none;
+  padding: 0;
+  margin: 0.4em 0 0 0;
+  background: transparent;
+  position: absolute;
+  width: 100%;
+  max-height: 0px;
+  overflow: hidden;
+  border: 3px solid transparent;
+  top: 1.2em;
+  left: -0.2em;
+  transition: all ease 0.25s;
+}
+
+.faux-select li .options li {
+  padding: 0.4em 0;
+  border-bottom: 2px solid rgba(198, 198, 198, 0.3);
+}
+
+.faux-select li .options li:hover {
+  background: rgba(255, 255, 255, 0.2);
+}
+
+.faux-select li .options li:last-of-type {
+  border-bottom: 0;
+}
+
+.faux-select li .options.open {
+  background: #399BA8;
+  max-height: 1000%;
+  border: 3px solid #C6C6C6;
+  border-top: 3px solid transparent;
+}
+
+.faux-select:before {
+  content: '';
+  width: 0;
+  height: 0;
+  border-left: 0.5em solid transparent;
+  border-right: 0.5em solid transparent;
+  border-top: 0.8em solid #fff;
+  position: absolute;
+  top: 0.5em;
+  right: 1em;
+  transition: all ease 0.25s;
+}
+
+.faux-select.open:before {
+  border-left: 0.5em solid transparent;
+  border-right: 0.5em solid transparent;
+  border-bottom: 0.8em solid #fff;
+  border-top: 0;
+}
+
+
+
+
+
+.spinner {
+  animation: rotator 1.4s linear infinite;
+}
+
+@keyframes rotator {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(270deg);
+  }
+}
+.path {
+  stroke-dasharray: 187;
+  stroke-dashoffset: 0;
+  transform-origin: center;
+  animation: dash 1.4s ease-in-out infinite, colors 5.6s ease-in-out infinite;
+}
+
+@keyframes colors {
+  0% {
+    stroke: #4285F4;
+  }
+  25% {
+    stroke: #DE3E35;
+  }
+  50% {
+    stroke: #F7C223;
+  }
+  75% {
+    stroke: #1B9A59;
+  }
+  100% {
+    stroke: #4285F4;
+  }
+}
+@keyframes dash {
+  0% {
+    stroke-dashoffset: 187;
+  }
+  50% {
+    stroke-dashoffset: 46.75;
+    transform: rotate(135deg);
+  }
+  100% {
+    stroke-dashoffset: 187;
+    transform: rotate(450deg);
+  }
+}

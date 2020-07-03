@@ -1,0 +1,32 @@
+﻿<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <title>Web Image Extractor - Blazor</title>
+    <base href="/" />
+    <link rel="stylesheet" href="css/main.css">
+</head>
+
+<body class="colflex">
+    <div class="colflex" style="height: 64px; background-color: #00B4CC; width: 100%;">
+        <div class="container" style="padding: 10px; color: white; font-size: 28px"><strong>Online Website Image Extractor</strong></div>
+    </div>
+    <div class="container" style="padding: 30px; font-size: 20px">
+        Extracts all images which can be found on a website. Only supports 'https', not 'http'. To get more features, use the library in a .NET application locally. <a href="https://github.com/James231/Web-Image-Extractor-Blazor" target="_blank">The source code is available on GitHub.</a><br><br>
+        This app is written in .NET Core using client-side Blazor. <a href="https://github.com/James231/WebImageExtractor" target="_blank">Uses WebImageExtractor library available here.</a><br><br>Enter your website URL below:
+    </div>
+    <app style="text-align:center;"><div style="text-align: center; font-size: 16px;">
+    <svg style="margin-bottom: 20px" class="spinner" width="65px" height="65px" viewBox="0 0 66 66" xmlns="http://www.w3.org/2000/svg">
+        <circle class="path" fill="none" stroke-width="6" stroke-linecap="round" cx="33" cy="33" r="30"></circle>
+    </svg><br>
+    Loading App ...
+</div></app>
+
+    <div class="grow"></div>
+
+    <script src="_framework/blazor.webassembly.js"></script>
+</body>
+
+</html>
